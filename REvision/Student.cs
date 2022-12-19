@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace REvision
 {
-    internal class Student : IComparable<Student>
+    internal class Student : IComparable<Student>//Note the use of <Student>, this avoids the need to cast in the CompareTo method
     {
         public string Name { get; set; }
         public int Age { get; set; }
         public List<Subject> Subjects { get; set; }
 
+        //Creates a string from the list of Subject results
         private string GetGradeList()
         {
             string s = "";
@@ -24,6 +25,7 @@ namespace REvision
             return s;
         }
 
+        //Creates a string with the top three subjects
         private string GetTopThreeGrades()
         {
             string s = GetGradeList();
@@ -34,7 +36,7 @@ namespace REvision
             {
                 returnString += character;
             }
-            returnString = returnString.Substring(0, 3);
+            returnString = returnString.Substring(0, 3);  //creates a sub string of the sorted grades, 3 characters long
             return returnString;
         }
 

@@ -16,8 +16,11 @@ namespace REvision
         {
             get
             {
-                return $"/images/{Result}.png";
+                //a formatted string representing the path to the image
+                return $"/images/{Result}.png";  
             }
+
+            //Note no set as this is a calculated property
         }
 
         public override string ToString()

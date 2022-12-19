@@ -79,7 +79,7 @@ namespace REvision
 
             if (selected != null)
             {
-                lbxSubjects.ItemsSource = selected.Subjects;
+                lbxSubjects.ItemsSource = selected.Subjects;  //this will use the ToString method of Subject
             }
         }
 
@@ -90,6 +90,9 @@ namespace REvision
             if (selected != null)
             {
                 imgGrade.Source = new BitmapImage(new Uri(selected.GradeImage, UriKind.Relative));
+                
+                //To have a hardcoded image you would use the code below, check the Subject class to see the GradeImage property
+                //imgGrade.Source = new BitmapImage(new Uri("/images/a.png", UriKind.Relative));
             }
         }
 
